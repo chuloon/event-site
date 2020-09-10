@@ -1,3 +1,5 @@
+import { LoginModule } from './login/login.module';
+import { SharedModule } from './shared/shared.module';
 import { firebaseConfig } from './../assets/firebase.config';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,7 +18,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    SharedModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

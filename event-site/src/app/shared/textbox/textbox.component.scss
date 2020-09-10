@@ -1,0 +1,21 @@
+.textbox-container {
+    input {
+        padding: 5px 13px;
+        line-height: 25px;
+        font-size: 14px;
+        border-radius: 3px;
+        border: solid 1px #CDD9ED;
+        max-width: calc(100%);
+
+        transition: border .3s ease;
+
+        &::placeholder {
+            color: #CBD1DC;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: #CC3333;
+        }
+    }
+}

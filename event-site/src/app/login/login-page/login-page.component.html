@@ -1,0 +1,15 @@
+<div id="login-page">
+    <div id="login-panel">
+        <panel>
+            <div id="logo">
+                <img src="../../../assets/img/logos/logo-200px.png" width="200" />
+            </div>
+            <div id="login-form">
+                <form [formGroup]="loginForm">
+                    <textbox [placeholder]="'Email'" formControlName="email"></textbox>
+                    <textbox [type]="'password'" [placeholder]="'Password'" formControlName="password"></textbox>
+                </form>
+            </div>
+        </panel>
+    </div>
+</div>
