@@ -1,6 +1,7 @@
 import { AuthService } from './../services/auth.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-page',
@@ -17,7 +18,11 @@ export class RegisterPageComponent implements OnInit {
     confirmPassword: ["ben0531"]
   });
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -25,13 +30,12 @@ export class RegisterPageComponent implements OnInit {
   registerSubmit = async () => {
     this.errorMessage = null;
     this.authService.registerUser(this.registerForm.value.email, this.registerForm.value.password)
-    .then(async response => {
-      debugger;
-      await this.authService.sendVerificationEmail();
-    })
-    .catch(ex => {
-      this.errorMessage = ex.message;
-    });
+      .then(async response => {
+        
+      })
+      .catch(ex => {
+        this.errorMessage = ex.message;
+      });
   }
 
 }

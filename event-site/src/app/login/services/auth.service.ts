@@ -12,8 +12,4 @@ export class AuthService {
   registerUser = async (email: string, password: string): Promise<any> => {
     return this.fireAuth.createUserWithEmailAndPassword(email, password);
   }
-
-  sendVerificationEmail = async (): Promise<any> => {
-    return (await this.fireAuth.currentUser).sendEmailVerification();
-  }
 }

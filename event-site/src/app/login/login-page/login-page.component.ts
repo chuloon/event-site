@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -11,10 +12,15 @@ export class LoginPageComponent implements OnInit {
     email: [""],
     password: [""]
   });
+  successMessage: string;
+  errorMessage: string;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    debugger;
+    let routeExtras = this.router.getCurrentNavigation().extras.state;
+    debugger;
   }
 
   loginSubmit = () => {
