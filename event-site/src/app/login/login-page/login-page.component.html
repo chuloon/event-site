@@ -1,14 +1,21 @@
 <div id="login-page">
     <div id="login-panel">
         <panel>
-            <div id="logo">
-                <img src="../../../assets/img/logos/logo-200px.png" width="200" />
-            </div>
-            <div id="login-form">
-                <form [formGroup]="loginForm">
-                    <textbox [placeholder]="'Email'" formControlName="email"></textbox>
-                    <textbox [type]="'password'" [placeholder]="'Password'" formControlName="password"></textbox>
-                </form>
+            <div class="panel-content">
+                <div id="logo">
+                    <img src="../../../assets/img/logos/logo-200px.png" width="200" />
+                </div>
+                <div id="login-form">
+                    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+                        <div class="form-item">
+                            <textbox [placeholder]="'Email'" formControlName="email"></textbox>
+                        </div>
+                        <div class="form-item">
+                            <textbox [type]="'password'" [placeholder]="'Password'" formControlName="password"></textbox>
+                        </div>
+                        <button class="login-button form-item" type="submit">Login</button>
+                    </form>
+                </div>
             </div>
         </panel>
     </div>

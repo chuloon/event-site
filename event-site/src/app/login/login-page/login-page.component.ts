@@ -8,13 +8,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
   loginForm: FormGroup = this.formBuilder.group({
-    email: ["email@email.com"],
-    password: ["password"]
+    email: [""],
+    password: [""]
   });
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+  loginSubmit = () => {
+
   }
 
 }

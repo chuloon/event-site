@@ -1,7 +1,7 @@
 import {ControlContainer, ControlValueAccessor, FormControl, FormControlDirective} from '@angular/forms';
-import {Injector, Input, ViewChild, Injectable} from '@angular/core';
+import { Injector, Input, ViewChild, Injectable, Component } from '@angular/core';
 
-@Injectable()
+@Component({ template: '' })
 export class ControlValueAccessorConnector implements ControlValueAccessor {
   @ViewChild(FormControlDirective, {static: true})
   formControlDirective: FormControlDirective;
