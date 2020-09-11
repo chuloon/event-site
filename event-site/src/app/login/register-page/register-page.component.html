@@ -1,1 +1,35 @@
-<p>register-page works!</p>
+<div id="register-page">
+    <div id="register-panel">
+        <panel>
+            <div class="panel-content">
+                <div id="logo">
+                    <img src="../../../assets/img/logos/logo-200px.png" width="200" />
+                </div>
+                <div id="register-form">
+                    <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+                        <div class="form-item half-group" style="margin-right: 10px;">
+                            <textbox [placeholder]="'First Name'" formControlName="firstName"></textbox>
+                        </div>
+                        <div class="form-item half-group">
+                            <textbox [placeholder]="'Last Name'" formControlName="lastName"></textbox>
+                        </div>
+                        <div class="form-item">
+                            <textbox [placeholder]="'Email'" formControlName="email"></textbox>
+                        </div>
+                        <div class="form-item">
+                            <textbox [type]="'password'" [placeholder]="'Password'" formControlName="password"></textbox>
+                            <div class="error-message">{{ errorMessage }}</div>
+                        </div>
+                        <div class="form-item">
+                            <textbox [type]="'password'" [placeholder]="'Confirm Password'" formControlName="confirmPassword"></textbox>
+                        </div>
+                        <button class="register-button form-item" type="submit">Register</button>
+                    </form>
+                </div>
+                <div id="login-link">
+                    <a routerLink="/login" routerLinkActive="router-link-active" >Login instead</a>
+                </div>
+            </div>
+        </panel>
+    </div>
+</div>
