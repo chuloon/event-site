@@ -1,4 +1,4 @@
-import { AuthService } from './../services/auth.service';
+import { AuthService } from '../../shared/services/auth.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -30,8 +30,11 @@ export class RegisterPageComponent implements OnInit {
   registerSubmit = async () => {
     this.errorMessage = null;
     this.authService.registerUser(this.registerForm.value.email, this.registerForm.value.password)
-      .then(async response => {
-        
+      .then(response => {
+        this.authService.addRegisteredUserData(response.user.uid, this.registerForm.value.firstName, this.registerForm.value.lastName)
+        .then(res => {
+          this.router.navigate(['/login'], { state: { data: { isFromRegistration: true } } });
+        });
       })
       .catch(ex => {
         this.errorMessage = ex.message;

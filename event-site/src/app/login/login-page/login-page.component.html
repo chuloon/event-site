@@ -7,11 +7,13 @@
                 </div>
                 <div id="login-form">
                     <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+                        <div class="success-message">{{ successMessage }}</div>
                         <div class="form-item">
                             <textbox [placeholder]="'Email'" formControlName="email"></textbox>
                         </div>
                         <div class="form-item">
                             <textbox [type]="'password'" [placeholder]="'Password'" formControlName="password"></textbox>
+                            <div class="error-message">{{ errorMessage }}</div>
                         </div>
                         <button class="login-button form-item" type="submit">Login</button>
                     </form>

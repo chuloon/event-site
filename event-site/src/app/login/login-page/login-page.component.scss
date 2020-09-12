@@ -1,50 +1,63 @@
 #login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
+
+  #login-panel {
     display: flex;
-    flex-direction: column;
     justify-content: center;
 
-    height: 100vh;
-    width: 100vw;
-
-    #login-panel {
-        display: flex;
-        justify-content: center;
-
-        .panel-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #login-form {
-            margin-top: 30px;
-            min-width: 300px;
-
-            .form-item {
-                margin-bottom: 7px;
-                display: block;
-            }
-
-            .login-button {
-                margin-right: 0px;
-                margin-left: auto;
-
-                padding: 7px 15px;
-                background-color: #CC3333;
-                border: none;
-                border-radius: 3px;
-
-                color: white;
-            }
-        }
-
-        #register-link {
-            margin-top: 100px;
-            
-            a {
-                color: #CC3333;
-                text-decoration: none;
-            }
-        }
+    .panel-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
+    #login-form {
+      margin-top: 30px;
+      min-width: 300px;
+
+      .success-message {
+        color: green;
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      .error-message {
+        margin-top: 3px;
+        color: #CC3333;
+        font-size: 11px;
+        text-align: right;
+      }
+
+      .form-item {
+        margin-bottom: 7px;
+        display: block;
+      }
+
+      .login-button {
+        margin-right: 0px;
+        margin-left: auto;
+
+        padding: 7px 15px;
+        background-color: #CC3333;
+        border: none;
+        border-radius: 3px;
+
+        color: white;
+      }
+    }
+
+    #register-link {
+      margin-top: 100px;
+
+      a {
+        color: #CC3333;
+        text-decoration: none;
+      }
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import { AuthService } from './../../shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,16 +16,27 @@ export class LoginPageComponent implements OnInit {
   successMessage: string;
   errorMessage: string;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder, 
+    private router: Router,
+    private authService: AuthService
+    ) { }
 
   ngOnInit() {
-    debugger;
-    let routeExtras = this.router.getCurrentNavigation().extras.state;
-    debugger;
+    let routeExtras = history.state.data;
+    if(routeExtras?.isFromRegistration) {
+      this.successMessage = "Account created successfully!"
+    }
   }
 
   loginSubmit = () => {
-
+    this.authService.loginUser(this.loginForm.value.email, this.loginForm.value.password)
+    .then(result => {
+      this.router.navigate(['/']);
+    })
+    .catch(ex => {
+      this.errorMessage = "Email or password invalid";
+    });
   }
 
 }
