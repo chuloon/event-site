@@ -1,3 +1,4 @@
+import { HomeModule } from './home/home.module';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
@@ -23,6 +24,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireAuthModule,
     SharedModule,
     LoginModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,9 @@
+<div id="navbar">
+    <div class="left-items">
+
+    </div>
+    <div class="right-items">
+        <div *ngIf="!isLoggedIn" class="auth-button">LOGIN</div>
+        <div *ngIf="isLoggedIn" class="auth-button">LOGOUT</div>
+    </div>
+</div>

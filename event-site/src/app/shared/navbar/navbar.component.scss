@@ -1,0 +1,24 @@
+#navbar {
+    display: flex;
+    background-color: #CC3333;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    height: 35px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .left-items {
+        display: flex;
+        justify-content: start;
+    }
+
+    .right-items {
+        display: flex;
+        justify-content: end;
+
+        .auth-button {
+            color: white;
+        }
+    }
+}
